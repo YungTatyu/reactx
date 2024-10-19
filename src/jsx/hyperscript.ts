@@ -1,12 +1,15 @@
-
 import { VNode, VNodeProps } from "./vnode.ts";
 
 // hypertext + javascript = hyperscript
-function h(tag: string, props: VNodeProps, ...children: VNode | string[]): VNode {
+function h(
+  tag: string,
+  props: VNodeProps,
+  ...children: VNode | string[]
+): VNode {
   return {
     tag,
     props: props || {},
-    children: children.flat()
+    children: children.flat(),
   };
 }
 

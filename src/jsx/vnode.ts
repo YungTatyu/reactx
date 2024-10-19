@@ -1,4 +1,3 @@
-
 /** virtual DOM node */
 export interface VNode {
   tag: string;
@@ -8,4 +7,3 @@ export interface VNode {
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export type VNodeProps = Record<string, any>;
-

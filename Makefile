@@ -19,5 +19,8 @@ init:
 lint: init
 	npx eslint ${SRC_DIR}
 
-.PHONY:	all clean re init lint
+fmt: init
+	npx prettier . --write
+
+.PHONY:	all clean re init lint fmt
 
