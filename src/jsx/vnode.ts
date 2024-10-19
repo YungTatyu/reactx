@@ -7,7 +7,5 @@ export interface VNode {
 }
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export interface VNodeProps {
-  [key: string]: any;
-}
+export type VNodeProps = Record<string, any>;
 
