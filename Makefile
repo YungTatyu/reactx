@@ -22,5 +22,8 @@ lint: init
 fmt: init
 	npx prettier . --write
 
+check: lint
+	npx prettier . --check
+
 .PHONY:	all clean re init lint fmt
 
