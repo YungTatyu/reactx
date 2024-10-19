@@ -1,9 +1,13 @@
 SRC_DIR	:= src
 DIST_DIR	:= dist
+BUILD_DIR	:= build
 RM	:= rm -f
 
 all: init ${DIST_DIR}
 	npx babel ${SRC_DIR} --out-dir ${DIST_DIR} --extensions ".ts"
+
+build:
+	npx tsc 
 
 ${DIST_DIR}: 
 	@mkdir -p $(dir $@)
@@ -25,5 +29,5 @@ fmt: init
 check: lint
 	npx prettier . --check
 
-.PHONY:	all clean re init lint fmt
+.PHONY:	all build clean re init lint fmt
 
