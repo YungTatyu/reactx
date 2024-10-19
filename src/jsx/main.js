@@ -1,5 +1,5 @@
 / ** @jsx h */
-
+// hypertext + javascript = hyperscript
 function h(tag, props, ...children) {
   return {
     tag,
@@ -8,10 +8,10 @@ function h(tag, props, ...children) {
   };
 }
 
-const element = (
-  <div id="container">
-    <h1>Hello, JSX outside React!</h1>
-    <p>This is rendered using hyperscript and Babel.</p>
-  </div>
-);
+function render(vnode) {
+  // vnode is string, convert to text nodes
+  if (vnode.split()) {
+    return document.createTextNode(vnode);
+  }
 
+}

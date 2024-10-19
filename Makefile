@@ -3,7 +3,7 @@ DIST_DIR	:= dist
 RM	:= rm -f
 
 all: ${DIST_DIR}
-	npx babel ${SRC_DIR} --out-dir ${DIST_DIR}
+	npx babel ${SRC_DIR} --out-dir ${DIST_DIR} --extensions ".ts"
 
 ${DIST_DIR}: 
 	@mkdir -p $(dir $@)
