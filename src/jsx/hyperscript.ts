@@ -1,5 +1,7 @@
 import { VNode, VNodeProps } from "./vnode.ts";
 
+const STRING = "string";
+
 // hypertext + javascript = hyperscript
 function h(
   tag: string,
@@ -13,18 +15,10 @@ function h(
   };
 }
 
-// function h(tag: string, props, ...children) {
-//   return {
-//     tag,
-//     props: props || {},
-//     children: children.flat()
-//   };
-// }
+function render(vnode: VNode | string): VNode {
+  if (typeof vnode === STRING) {
+    return document.createTextNode(vnode);
+  }
+  const tag = document.createElement(vnode.tag);
 
-// function render(vnode) {
-//   // vnode is string, convert to text nodes
-//   if (vnode.split()) {
-//     return document.createTextNode(vnode);
-//   }
-//
-// }
+}
