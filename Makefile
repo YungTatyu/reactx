@@ -2,7 +2,7 @@ SRC_DIR	:= src
 DIST_DIR	:= dist
 RM	:= rm -f
 
-all: ${DIST_DIR}
+all: init ${DIST_DIR}
 	npx babel ${SRC_DIR} --out-dir ${DIST_DIR} --extensions ".ts"
 
 ${DIST_DIR}: 
@@ -13,6 +13,11 @@ clean:
 
 re: clean all
 
+init:
+	npm install
 
-.PHONY:	all clean re
+lint: init
+	npx eslint ${SRC_DIR}
+
+.PHONY:	all clean re init lint
 
