@@ -44,12 +44,13 @@ function render(vnode: VNode | string): HTMLElement | Text {
   if (typeof vnode === "string") {
     return document.createTextNode(vnode);
   }
+
   const tag = document.createElement(vnode.tag);
 
   // set attribute to tag
   // ex) <div class="js-body">
   const props = vnode.props || {};
-  Object.keys(props).forEach((key) => tag.setAttribute(key, props.key));
+  Object.keys(props).forEach((key) => tag.setAttribute(key, props[key]));
 
   // add children tag to parent tag
   const children = vnode.children || [];
