@@ -1,4 +1,4 @@
-import { VNode, VNodeProps } from "./vnode.ts";
+import { VNode, VNodeProps } from "./vnode";
 
 /** hypertext + javascript = hyperscript
  ex) jsx
