@@ -1,19 +1,19 @@
 SRC_DIR	:= src
-DIST_DIR	:= dist
+FINAL_DIR	:= final
 BUILD_DIR	:= build
 RM	:= rm -f
 
-all: install ${DIST_DIR}
-	npx babel ${SRC_DIR} --out-dir ${DIST_DIR} --extensions ".ts"
+all: build
 
-build:
+build: install ${FINAL_DIR}
 	npx tsc 
+	npx babel ${BUILD_DIR} --out-dir ${FINAL_DIR} --extensions ".ts"
 
-${DIST_DIR}: 
+${FINAL_DIR}: 
 	@mkdir -p $(dir $@)
 
 clean:
-	${RM} -r ${DIST_DIR}
+	${RM} -r ${BUILD_DIR} ${FINAL_DIR}
 
 re: clean all
 
