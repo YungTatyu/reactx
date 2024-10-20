@@ -3,7 +3,7 @@ DIST_DIR	:= dist
 BUILD_DIR	:= build
 RM	:= rm -f
 
-all: init ${DIST_DIR}
+all: install ${DIST_DIR}
 	npx babel ${SRC_DIR} --out-dir ${DIST_DIR} --extensions ".ts"
 
 build:
@@ -17,17 +17,17 @@ clean:
 
 re: clean all
 
-init:
+install:
 	npm install
 
-lint: init
+lint: install
 	npx eslint ${SRC_DIR}
 
-fmt: init
+fmt: install
 	npx prettier . --write
 
 check: lint
 	npx prettier . --check
 
-.PHONY:	all build clean re init lint fmt
+.PHONY:	all build clean re install lint fmt
 
