@@ -7,7 +7,7 @@ all: build
 
 build: install ${FINAL_DIR}
 	npx tsc 
-	npx babel ${BUILD_DIR} --out-dir ${FINAL_DIR} --extensions ".ts"
+	npx babel ${BUILD_DIR} --out-dir ${FINAL_DIR} 
 
 ${FINAL_DIR}: 
 	@mkdir -p $(dir $@)

@@ -6,19 +6,19 @@ const STRING = "string";
 function h(
   tag: string,
   props: VNodeProps,
-  ...children: VNode | string[]
+  ...children: (VNode | string)[]
 ): VNode {
   return {
     tag,
     props: props || {},
-    children: children.flat(),
+    children: children.flat() as (VNode | string)[],
   };
 }
 
-function render(vnode: VNode | string): VNode {
-  if (typeof vnode === STRING) {
-    return document.createTextNode(vnode);
-  }
-  const tag = document.createElement(vnode.tag);
-
-}
+// function render(vnode: VNode | string): VNode {
+//   if (typeof vnode === STRING) {
+//     return document.createTextNode(vnode);
+//   }
+//   const tag = document.createElement(vnode.tag);
+//
+// }
