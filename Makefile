@@ -5,9 +5,9 @@ RM	:= rm -f
 
 all: build-all
 
-build-all: install ${BUILD_DIR} ${FINAL_DIR}
+build-all: install ${BUILD_DIR}
 	npx tsc
-	npx babel ${BUILD_DIR} --out-dir ${FINAL_DIR} 
+	npx babel ${SRC_DIR} --out-dir ${FINAL_DIR} 
 
 ${BUILD_DIR}: 
 	mkdir -p $@

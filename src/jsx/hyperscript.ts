@@ -40,7 +40,7 @@ function h(
   };
 }
 
-function render(vnode: VNode | string): HTMLElement | Text {
+export function render(vnode: VNode | string): HTMLElement | Text {
   if (typeof vnode === "string") {
     return document.createTextNode(vnode);
   }
